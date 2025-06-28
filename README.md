@@ -145,9 +145,11 @@ Here is the final Command to run this
 Assuming your .java files are still in src/, and your MySQL .jar is the same:
 
 javac -d bin -cp ".;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" src\*.java
+
 ✅ Updated Run Command:
 
 java -cp "bin;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" StudentsManagementSystem
+
 Make sure the file and class are both named exactly: StudentsManagementSystem.java and public class StudentsManagementSystem.
 
 To DB Connectio:
