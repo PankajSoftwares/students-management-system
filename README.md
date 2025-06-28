@@ -136,17 +136,40 @@ Before running the application, you need the following:
 
 Feel free to contribute to this project by creating pull requests or reporting issues on GitHub.
 
----
+--
 
-Feel free to customize the README file to include additional information, screenshots, or instructions as needed. You can then push the README file to your GitHub repository to provide documentation for your project.
 
-![Screenshot 2023-11-08 174322](https://github.com/atharvmaske/student-management-system-/assets/132181444/b31b6e56-873b-4b09-8911-524944a7419b)
+Here is the final Command to run this
 
-![Screenshot 2023-11-08 174331](https://github.com/atharvmaske/student-management-system-/assets/132181444/61198222-2876-423a-83b1-55f6b17ae764)
+java -cp ".;../mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" StudentManagementSystem
 
-![Screenshot 2023-11-08 174516](https://github.com/atharvmaske/student-management-system-/assets/132181444/94919254-3418-42bf-9b29-c74f693b4dfa)
+To DB Connectio:
 
-![Screenshot 2023-11-08 174629](https://github.com/atharvmaske/student-management-system-/assets/132181444/cb2dea5c-1fa6-4e0d-8477-f1a3fdf085cf)
+there is DBConnect File and also you should run this to check: 
+
+javac -cp ".;..\mysql-connector-j-9.3.0\mysql-connector-j-9.3.0.jar" DBConnect.java StudentManagementSystem.java
+
+
+Database table creations:
+
+
+Option A: 🧹 Drop and Recreate Correct Table
+sql
+Copy
+Edit
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    student_name VARCHAR(100),
+    student_id VARCHAR(20) PRIMARY KEY,
+    student_grade DOUBLE,
+    dob DATE,
+    gender VARCHAR(10),
+    contact VARCHAR(15),
+    email VARCHAR(100)
+);
+
+
 
 
 
