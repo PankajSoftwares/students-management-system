@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class StudentManagementSystem extends JFrame implements ActionListener {
+public class StudentsManagementSystem extends JFrame implements ActionListener {
     JLabel jtitle;
     JLabel studentName, studentID, studentGrade, dobLabel, genderLabel, contactLabel, emailLabel;
     JTextField jstudentName, jstudentID, jstudentGrade, dobField, contactField, emailField, searchField;
@@ -25,14 +25,14 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
     private static final String DB_PASSWORD = System.getenv("DB_PASSWORD"); // 👈 Secure
     private transient Connection connection;
 
-    public StudentManagementSystem() {
-        setTitle("Student Management System by Group 5");
+    public StudentsManagementSystem() {
+        setTitle("Students Management System by Pankaj Kumar");
         setLayout(null);
         setSize(1000, 600);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        jtitle = new JLabel("STUDENT MANAGEMENT SYSTEM");
+        jtitle = new JLabel("STUDENTS MANAGEMENT SYSTEM");
         jtitle.setBounds(250, 10, 700, 50);
         jtitle.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
 
@@ -45,13 +45,13 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
         studentGrade = new JLabel("Student Grade");
         studentGrade.setBounds(50, 160, 150, 30);
 
-        dobLabel = new JLabel("Date of Birth");
+        dobLabel = new JLabel("Date of Birth (DD-MM-YYYY)");
         dobLabel.setBounds(50, 200, 150, 30);
 
         genderLabel = new JLabel("Gender");
         genderLabel.setBounds(50, 240, 150, 30);
 
-        contactLabel = new JLabel("Contact Name");
+        contactLabel = new JLabel("Contact Number");
         contactLabel.setBounds(50, 280, 150, 30);
 
         emailLabel = new JLabel("Email");
@@ -155,8 +155,7 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(this, "Invalid email address.", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (!isValidDate(dob)) {
                 JOptionPane.showMessageDialog(this, "Invalid date of birth. Use the format 'dd-MM-yyyy'.", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (!isValidGrade(grade)) {
-                JOptionPane.showMessageDialog(this, "Invalid student grade. It should be a number.", "Error", JOptionPane.ERROR_MESSAGE);
+    
             } else if (!isNumeric(id)) {
                 JOptionPane.showMessageDialog(this, "Invalid student ID. It should be a number.", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (!isValidContactNumber(contact)) {
@@ -225,14 +224,7 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
         }
     }
 
-    private boolean isValidGrade(String grade) {
-        try {
-            Double.parseDouble(grade);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
+
 
     private boolean isValidStudentID(String id) {
         return id.matches("^[A-Za-z0-9]+$");
@@ -261,6 +253,7 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
     }
 
     private void insertStudentData(String name, String id, String grade, String dob, String gender, String contact, String email) {
+        
         String insertQuery = "INSERT INTO students (student_name, student_id, student_grade, dob, gender, contact, email) VALUES (?, ?, ?, STR_TO_DATE(?, '%d-%m-%Y'), ?, ?, ?)";
 
         try {
@@ -340,7 +333,7 @@ public class StudentManagementSystem extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new StudentManagementSystem();
+            new StudentsManagementSystem();
         });
     }
 }
