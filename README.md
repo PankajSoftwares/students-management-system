@@ -141,13 +141,25 @@ Feel free to contribute to this project by creating pull requests or reporting i
 
 Here is the final Command to run this
 
-java -cp ".;../mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" StudentManagementSystem
+✅ Updated Compile Command:
+Assuming your .java files are still in src/, and your MySQL .jar is the same:
+
+bash
+Copy
+Edit
+javac -d bin -cp ".;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" src\*.java
+✅ Updated Run Command:
+bash
+Copy
+Edit
+java -cp "bin;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" StudentsManagementSystem
+Make sure the file and class are both named exactly: StudentsManagementSystem.java and public class StudentsManagementSystem.
 
 To DB Connectio:
 
 there is DBConnect File and also you should run this to check: 
 
-javac -cp ".;..\mysql-connector-j-9.3.0\mysql-connector-j-9.3.0.jar" DBConnect.java StudentManagementSystem.java
+javac -cp ".;..\mysql-connector-j-9.3.0\mysql-connector-j-9.3.0.jar" DBConnect.java StudentsManagementSystem.java
 
 
 Database table creations:
