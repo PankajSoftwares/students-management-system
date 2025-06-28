@@ -141,6 +141,39 @@ Feel free to contribute to this project by creating pull requests or reporting i
 
 Here is the final Command to run this
 
+Great! To add your compile and run instructions to your GitHub `README.md`, use a fenced code block with backticks (\`) and clear labels. Here's the Markdown snippet you can copy:
+
+````markdown
+## Compile and Run Instructions
+
+Make sure you have:
+
+- Java JDK installed
+- MySQL Connector/J placed inside `mysql-connector-j-9.3.0/`
+- Source file inside `src/StudentsManagementSystem.java`
+
+### Compile:
+```bash
+javac -d bin -cp ".;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" src/StudentsManagementSystem.java
+````
+
+### Run:
+
+```bash
+java -cp "bin;mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" StudentsManagementSystem
+```
+
+> Use `/` instead of `\` if you're on Linux/macOS or Git Bash.
+
+```
+
+You can paste this inside your `README.md` and commit it.
+
+Let me know if you want to include [GIF demo](f), [screenshots](f), or [GitHub project structure](f) too.
+```
+
+
+
 ✅ Updated Compile Command:
 Assuming your .java files are still in src/, and your MySQL .jar is the same:
 
